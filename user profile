@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Add your profile page-specific CSS here */
+        /* Customize the styling of the user profile page */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="center">
+            <h1>User Profile</h1>
+            <form method="POST" action="update_profile.php">
+                <div class="txt_field">
+                    <input type="text" name="username" value="JohnDoe" required>
+                    <span></span>
+                    <label>Username</label>
+                </div>
+                <div class="txt_field">
+                    <input type="email" name="email" value="johndoe@example.com" required>
+                    <span></span>
+                    <label>Email</label>
+                </div>
+                <div class="txt_field">
+                    <input type="password" name="password" placeholder="Password">
+                    <span></span>
+                    <label>New Password</label>
+                </div>
+                <div class="txt_field">
+                    <input type="password" name="Gender" placeholder="Confirm New Password">
+                    <span></span>
+                    <label>Confirm New Password</label>
+                </div>
+                <input type="submit" name="update_profile" value="Update Profile">
+            </form>
+            <div class="signup_link">
+                <a href="logout.php">Logout</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

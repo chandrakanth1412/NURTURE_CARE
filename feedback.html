@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <!-- <link rel="stylesheet" href="navstyle.css"> -->
+    <title>NurtureCare</title>
+    <style>
+        body {
+            overflow-x: hidden;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        
+        header {
+            /* background-color:#97dcd3; */
+            color: white;
+            padding: 1px;
+            text-align: center;
+        }
+
+        .hamburger {
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .menu-bar {
+            display: flex;
+            align-items: center;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .menu-items {
+            display: none;
+            position: absolute;
+            background-color: black;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            padding: 10px;
+            left: 0;
+            top: 40px;
+            cursor: pointer;
+        }
+
+        .show-menu {
+            display: block !important;
+        }
+
+        nav {
+            background-color:#97dcd3;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        li {
+            display: inline;
+            margin-right: 20px;
+        }
+        
+        a {
+            text-decoration: none;
+            color: black;
+        }
+        
+        main {
+            padding: 20px;
+        }
+        
+        section {
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 1px solid #a8f3e9;
+            background-color: white;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        section h2 {
+            text-align: center;
+            color: black;
+        }
+
+        h2 {
+            margin-top: 0;
+        }
+
+        /* Style for the dropdown menu */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        /* Style for the dropdown button */
+        .dropbtn {
+            text-decoration: none;
+            color: black;
+            margin-right: 20px;
+        }
+
+        /* Style for the dropdown content */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #3333; /* Background color for dropdown */
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        /* Style for dropdown links */
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        /* Change color of dropdown links on hover */
+        .dropdown-content a:hover {
+            background-color: #444;
+        }
+
+        /* Display the dropdown content when hovering over the dropdown */
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .img{
+            padding-left: 68rem;
+        
+        }
+     .service{
+        height: 70px;
+         width: 400px;
+        background-color: #97dcd3;
+        border-radius: 100px;
+     }
+
+
+     form .input-box input{
+  height: 100%;
+  width: 100%;
+  outline: none;
+  padding: 18px 15px;
+  font-size: 12px;
+  font-weight: 400;
+  color: #333;
+  border: 1.5px solid #97dcd3;
+  border-bottom-width: 2.5px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+.input-box input:focus,
+.input-box input:valid{
+  border-color:#97dcd3;
+}
+form .policy{
+  display: flex;
+  align-items: center;
+}
+form h3{
+  color: #707070;
+  font-size: 14px;
+  font-weight: 500;
+  margin-left: 10px;
+}
+.input-box.button input{
+  width: 250px;
+  height: 70px;
+    color: #fff;
+    letter-spacing: 1px;
+    border: none;
+    background: #97dcd3;
+    cursor: pointer;
+    font-size: 21px;
+}
+.input-box.button input:hover{
+  background: #97dcd3;
+}
+form .text h3{
+ color: #333;
+ width: 100%;
+ text-align: center;
+}
+form .text h3 a{
+  color:#97dcd3;
+  text-decoration: none;
+}
+form .text h3 a:hover{
+  text-decoration: underline;
+}
+    
+.box{
+  width:300px;
+}
+  form{
+    height: 200px;
+  }
+  textarea{
+    height: 83%;
+  width: 42%;
+  outline: none;
+  padding: 18px 15px;
+  font-size: 12px;
+  font-weight: 400;
+  color: #333;
+  border: 1.5px solid #97dcd3;
+  border-bottom-width: 2.5px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+    
+  }
+
+
+  @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+*{
+    list-style: none;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+body{
+    background: #f5f6fa;
+}
+
+.wrapper .sidebar{
+    /* background:black; */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 225px;
+    height: 100%;
+    padding: 20px 0;
+    transition: all 0.5s ease;
+}
+.wrapper .sidebar ul li a{
+    display: block;
+    padding: 13px 30px;
+    border-bottom: 1px solid black;
+    color: black;
+    font-size: 16px;
+    position: relative;
+}
+
+.wrapper .sidebar ul li a .icon{
+    color: #dee4ec;
+    width: 30px;
+    display: inline-block;
+}
+.wrapper .sidebar ul li a:hover,
+.wrapper .sidebar ul li a.active{
+    color: black;
+
+    background:white;
+    border-right: 2px solid rgb(5, 68, 104);
+}
+
+.wrapper .sidebar ul li a:hover .icon,
+.wrapper .sidebar ul li a.active .icon{
+    color: #0c7db1;
+}
+
+.wrapper .sidebar ul li a:hover:before,
+.wrapper .sidebar ul li a.active:before{
+    display: block;
+}
+.wrapper .section{
+    width: calc(100% - 225px);
+    margin-left: 225px;
+    transition: all 0.5s ease;
+}
+
+.wrapper .section .top_navbar{
+    /* background:#97dcd3; */
+    height: 33px;
+    display: flex;
+    align-items: center;
+    padding: 0 30px;
+
+}
+
+.wrapper .section .top_navbar .hamburger a{
+    font-size: 28px;
+    color:black;
+}
+
+.wrapper .section .top_navbar .hamburger a:hover{
+    color:black;
+}
+body.active .wrapper .sidebar{
+    left: -225px;
+}
+
+body.active .wrapper .section{
+    margin-left: 0;
+    width: 100%;
+}
+.hamburger {
+    margin-bottom: -92px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+.rate {
+    float: left;
+    height: 46px;
+    padding: 0 10px;
+}
+.rate:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+}
+.rate:not(:checked) > label {
+    float:right;
+    width:1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:38px;
+    color:#ccc;
+}
+.rate:not(:checked) > label:before {
+    content: '★ ';
+}
+.rate > input:checked ~ label {
+    color: #ffc700;    
+}
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label {
+    color: #deb217;  
+}
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label,
+.rate > input:checked ~ label:hover,
+.rate > input:checked ~ label:hover ~ label,
+.rate > label:hover ~ input:checked ~ label {
+    color: #c59b08;
+}
+
+/* Modified from: https://github.com/mukulkant/Star-rating-using-pure-css */
+
+lable{
+    margin-bottom: 10px;}
+
+
+    </style>
+</head>
+<body style="background-image: url('dbimage-2.jpg'); background-size: cover; width:100%; height:100%;">
+   
+    
+      
+      <header>
+        <div class="wrapper">
+     <!--Top menu --><div class="section">
+         <div class="top_navbar">
+             <div class="hamburger">
+                 <a href="#">
+                     <i class="fas fa-bars"></i>
+                 </a>
+             </div>
+         </div>
+
+     </div>
+     <div class="sidebar">
+        <!--profile image & text-->
+         <!--menu item-->
+         <ul>
+            <li>
+                <a href="about.html">
+                    <span class="icon"><i class="fas fa-home"style='color: black'></i></span>
+                    <span class="item">Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="userprofile.html">
+                    <span class="icon"><i class="fas fa-user-shield"style='color: black'></i></span>
+                    <span class="item">User Data Entry</span>
+                </a>
+            </li>
+           
+            <li>
+                <a href="choosetheservice.php">
+                    <span class="icon"><i class="fa fa-check-circle" style='color: black'aria-hidden="true"></i></span>
+                    <span class="item">Choose the Service</span>
+                </a>
+            </li>
+            <li>
+                <a href="emergency.html">
+                    <span class="icon"><i class="fa fa-plus-square" style='color: black'aria-hidden="true"></i></span>
+                    <span class="item">Emergency</span>
+                </a>
+            </li>
+            <li>
+                <a href="Srequest.html">
+                    <span class="icon"><i class="fas fa-user-friends"style='color: black'></i></span>
+                    <span class="item">Staff Request </span>
+                </a>
+            </li>
+            <li>
+                <a href="complaints.html">
+                    <span class="icon"><i class="fa fa-list-alt"style='color: black'></i></span>
+                    <span class="item">Complaints</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="feedback.html"class="active">
+                    <span class="icon"><i class="fas fa-comments"style='color: black'></i></span>
+                    <span class="item">Feedback</span>
+                </a>
+            </li>
+            <li>
+                <a href="logout.php">
+                    <span class="icon"><i class='fas fa-sign-out-alt' style='color: black'></i></span>
+                    <span class="item">Log Out</span>
+                </a>
+            </li>
+            
+         </ul>
+     </div>
+     
+ </div>
+ </div>
+        <div>
+            <h1 class="logo" style="margin-right:-475px; margin-bottom:25px;"><img src="logo2.jpeg" width="50" height="50" style="    margin-bottom: -10px;"> NurtureCare   <a href="notification.php" ><img style="margin-left:335px;" src="N-1.png" width="25" height="25"></a></h1> 
+            <!-- <h1><img src="N-1.png" width="50" height="50"></h1> -->
+        </div>
+        
+    </header><br>
+
+    <div id="btnContainer">
+
+
+                </div>
+</head>
+<body><center>
+    <h1 style="border-top: none;    font-size: 21px;">Customer Feedback Form</h1>
+   <br>
+    <!-- <table style="margin-left:80px;"><div><br>
+        <tr>
+          <th class="first-col"></th>
+          <th>VeryGood</th>
+          <th>Good</th>
+          <th>Fair</th>
+          <th>Poor</th>
+          <th>VeryPoor</th>
+        </tr>
+        <table><div><br> -->
+        <tr>
+          <!-- <td class="first-col">Care</td> <div class="rate"> -->
+            <h5 style="margin-right: 331px;">Care:</h5>
+            <center>
+            <div class="rate" style="margin-left: 34em;
+            margin-top: -38px;">
+                <!-- <lable >care:</lable> -->
+                  <input type="radio" id="star5" name="rate" value="5" />
+                  <label for="star5" title="text">5 stars</label>
+                  <input type="radio" id="star4" name="rate" value="4" />
+                  <label for="star4" title="text">4 stars</label>
+                  <input type="radio" id="star3" name="rate" value="3" />
+                  <label for="star3" title="text">3 stars</label>
+                  <input type="radio" id="star2" name="rate" value="2" />
+                  <label for="star2" title="text">2 stars</label>
+                  <input type="radio" id="star1" name="rate" value="1" />
+                  <label for="star1" title="text">1 stars</label>
+                  
+                </div><br><br>
+                <h5 style="margin-right: 298px;">Experience:</h5>
+                <div class="rate" style="margin-left: 34em;
+                margin-top: -38px;">
+                    <!-- <lable>Service:</lable> -->
+                      <input type="radio" id="star5" name="rate" value="5" />
+                      <label for="star5" title="text">5 stars</label>
+                      <input type="radio" id="star4" name="rate" value="4" />
+                      <label for="star4" title="text">4 stars</label>
+                      <input type="radio" id="star3" name="rate" value="3" />
+                      <label for="star3" title="text">3 stars</label>
+                      <input type="radio" id="star2" name="rate" value="2" />
+                      <label for="star2" title="text">2 stars</label>
+                      <input type="radio" id="star1" name="rate" value="1" />
+                      <label for="star1" title="text">1 stars</label>
+                      
+                    </div><br><br>
+                    <h5 style="margin-right: 275px;">Communication:</h5>
+                    <div class="rate" style="margin-left: 34em;
+                    margin-top: -38px;">
+                        <!-- <lable>Communication:</lable> -->
+                          <input type="radio" id="star5" name="rate" value="5" />
+                          <label for="star5" title="text">5 stars</label>
+                          <input type="radio" id="star4" name="rate" value="4" />
+                          <label for="star4" title="text">4 stars</label>
+                          <input type="radio" id="star3" name="rate" value="3" />
+                          <label for="star3" title="text">3 stars</label>
+                          <input type="radio" id="star2" name="rate" value="2" />
+                          <label for="star2" title="text">2 stars</label>
+                          <input type="radio" id="star1" name="rate" value="1" />
+                          <label for="star1" title="text">1 stars</label>
+                          
+                        </div><br><br>
+                        <h5 style="margin-right: 310px;">Response:</h5>
+                        <div class="rate" style="margin-left: 34em;
+                        margin-top: -38px;">
+                            <!-- <lable>Response:</lable> -->
+                              <input type="radio" id="star5" name="rate" value="5" />
+                              <label for="star5" title="text">5 stars</label>
+                              <input type="radio" id="star4" name="rate" value="4" />
+                              <label for="star4" title="text">4 stars</label>
+                              <input type="radio" id="star3" name="rate" value="3" />
+                              <label for="star3" title="text">3 stars</label>
+                              <input type="radio" id="star2" name="rate" value="2" />
+                              <label for="star2" title="text">2 stars</label>
+                              <input type="radio" id="star1" name="rate" value="1" />
+                              <label for="star1" title="text">1 stars</label>
+                              
+                            </div>
+                        </center>
+    </table></div></br>
+    <!-- Your other content here -->
+    <div class="testbox">
+        <form action="/">
+            <h1 style="    font-size: 21px;">Suggestions</h1>
+            <div><br>
+            <!-- <table>
+                
+            </table></div></br> -->
+            <textarea rows="5" cols="5"></textarea>
+            <!-- <h4>Email</h4>
+            <small>Only if you want to hear more from us.</small>
+            <input class="email" type="text" name="email"> -->
+            
+        </form>
+    </div>
+  
+    <div class="input-box button">
+        <input type="Submit" value="Send Feedback">
+      </div><br>  <!-- ... (other content) ... -->
+</center>
+    <script>
+        var hamburger = document.querySelector(".hamburger");
+        hamburger.addEventListener("click", function(){
+            document.querySelector("body").classList.toggle("active");
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Home</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      body{
+  margin: 0;
+  padding: 0;
+  font-family: Roboto;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background: white;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.center {
+    position: absolute;
+    top: 70%;
+    left: 53%;
+    transform: translate(-50%, -50%);
+    width: 30vw;
+    background: white;
+    border-radius: 10px;
+}
+.center h1{
+  text-align: center;
+  padding: 0 0 20px 0;
+  border-bottom: 1px solid silver;
+}
+
+.center form{
+  padding: 0 40px;
+  box-sizing: border-box;
+}
+
+form .txt_field{
+  position: relative;
+  border-bottom: 2px solid #adadad;
+  margin: 30px 0;
+}
+
+.txt_field input{
+  width: 100%;
+  padding: 0 5px;
+  height: 40px;
+  font-size: 16px;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+.txt_field label{
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  color: #adadad;
+  transform: translateY(-50%);
+  font-size: 16px;
+  pointer-events: none;
+}
+
+.txt_field span::before{
+  content: '';
+  position: absolute;
+  top: 40px;
+  left: 0;
+  width: 0px;
+  height: 2px;
+  background: #2691d9;
+  transition: .5s;
+}
+
+.txt_field input:focus ~ label,
+.txt_field input:valid ~ label{
+  top: -5px;
+  color: #2691d9;
+}
+
+.txt_field input:focus ~ span::before,
+.txt_field input:Valid ~ span::before{
+  width: 100%;
+}
+
+.pass{
+  margin: -5px 0 20px 5px;
+  color: #a6a6a6;
+  cursor: pointer;
+}
+
+.pass:hover{
+  text-decoration: underline;
+}
+
+input[type="Submit"]{
+  width: 100%;
+  height: 50px;
+  border: aliceblue;
+  border-radius: 25px;
+  background-color:#13C5DD;
+  font-size: 18px;
+  font-weight: 700;
+  color:white;
+  cursor: pointer;
+
+}
+
+input[type="Submit"]:hover{
+  background:#13C5DD;
+  color: #e9f4fb;
+  transition: .5s;
+}
+
+.signup_link{
+  margin: 30px 0;
+  text-align: center;
+  font-size: 16px;
+  color: #666666;
+}
+
+.signup_link a{
+  color: #13C5DD;
+  text-decoration: none;
+}
+
+.signup_link a:hover{
+  text-decoration: underline;
+}
+
+.HomeAbout{
+  width: 100vw;
+  height: 25vh;
+}
+    </style>
+      <style>
+        /* Centering the buttons horizontally */
+
+        body {
+        
+            width: 100%;
+            background-color: #fff;
+        }
+        header {
+            /* display: flex; */
+            width: 100%;
+          
+            color: white;
+            padding: 1px;
+            text-align: center;
+            align-items: center;
+            margin-bottom: 32em;
+            justify-content: center;
+            
+}
+
+        
+    </style>
+  </head>
+  <body style="overflow-y: auto;">
+    <header >
+      <h1>
+        <center style="font-family: auto;">
+            <h1  style="margin-left:44px;        margin-bottom: -47px; color:#13C5DD; font-size: 51px;"> NurtureCare
+        </center>
+        </h1>
+          </h1>
+          </header>
+      
+         <br>
+    <div class="container">
+      <div class="center">
+          <h1 style="color:#13C5DD; ">Signup</h1>
+
+          <form method="POST" action="asignup.php">
+            <div class="txt_field">
+              <input type="text" name="name" required>
+              <span></span>
+              <label>UserName</label>
+          </div>
+              <div class="txt_field">
+                  <input type="email" name="email" required>
+                  <span></span>
+                  <label>Email</label>
+              </div>
+              <div class="txt_field">
+                  <input type="password" name="password" required>
+                  <span></span>
+                  <label>Password</label>
+              </div>
+              <div class="txt_field">
+                <input type="text" name="contactno" required>
+                <span></span>
+                <label>Contact No</label>
+            </div>
+            <div class="txt_field">
+              <input type="text" name="gender" required>
+              <span></span>
+              <label>Gender</label>
+          </div>
+              <input name="submit" type="Submit" value="Sign Up">
+              <div class="signup_link">
+                   Don't Have an Account ? <a href="admin.html">Login</a>
+              </div>
+          </form>
+      </div>
+  </div>
+  </body>
+</html>

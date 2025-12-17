@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/* Create two equal columns that float next to each other */
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+  height: 300px; /* Adjust the height as needed */
+}
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+  height: 300px; /* Adjust the height as needed */
+}
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+  height: 300px; /* Adjust the height as needed */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+header {
+  background-color:#97dcd3;
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+
+.row1 {
+  margin-right: 30px;
+}
+
+/* Style for the search bar */
+.search-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.search-box {
+  width: 619px;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+.search-button {
+  background-color: #97dcd3;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+*{
+    list-style: none;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+body{
+    background: #f5f6fa;
+}
+
+.wrapper .sidebar{
+    background:black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 225px;
+    height: 100%;
+    padding: 20px 0;
+    transition: all 0.5s ease;
+}
+.wrapper .sidebar ul li a{
+    display: block;
+    padding: 13px 30px;
+    border-bottom: 1px solid black;
+    color: rgb(241, 237, 237);
+    font-size: 16px;
+    position: relative;
+}
+
+.wrapper .sidebar ul li a .icon{
+    color: #dee4ec;
+    width: 30px;
+    display: inline-block;
+}
+.wrapper .sidebar ul li a:hover,
+.wrapper .sidebar ul li a.active{
+    color: #0c7db1;
+
+    background:white;
+    border-right: 2px solid rgb(5, 68, 104);
+}
+
+.wrapper .sidebar ul li a:hover .icon,
+.wrapper .sidebar ul li a.active .icon{
+    color: #0c7db1;
+}
+
+.wrapper .sidebar ul li a:hover:before,
+.wrapper .sidebar ul li a.active:before{
+    display: block;
+}
+.wrapper .section{
+    width: calc(100% - 225px);
+    margin-left: 225px;
+    transition: all 0.5s ease;
+}
+
+.wrapper .section .top_navbar{
+    background:#97dcd3;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    padding: 0 30px;
+
+}
+
+.wrapper .section .top_navbar .hamburger a{
+    font-size: 28px;
+    color: #f4fbff;
+}
+
+.wrapper .section .top_navbar .hamburger a:hover{
+    color: #a2ecff;
+}
+body.active .wrapper .sidebar{
+    left: -225px;
+}
+
+body.active .wrapper .section{
+    margin-left: 0;
+    width: 100%;
+}
+.hamburger {
+    margin-bottom: -122px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+
+</style>
+</head>
+<body>
+<div>
+  <header>
+    <div class="wrapper">
+      <!--Top menu --><div class="section">
+          <div class="top_navbar">
+              <div class="hamburger">
+                  <a href="#">
+                      <i class="fas fa-bars"></i>
+                  </a>
+              </div>
+          </div>
+ 
+      </div>
+      <div class="sidebar">
+         <!--profile image & text-->
+          <!--menu item-->
+          <ul>
+    
+              <li>
+                  <a href="#" class="active">
+                      <span class="icon"><i class="fas fa-home"></i></span>
+                      <span class="item">Home</span>
+                  </a>
+              </li>
+              <li>
+                  <a href="#">
+                      <span class="icon"><i class="fas fa-user-shield"></i></span>
+                      <span class="item">Profile</span>
+                  </a>
+              </li>
+              <li>
+                  <a href="#">
+                      <span class="icon"><i class='fa fa-list-alt' style='color: white'></i></span>
+                      <span class="item">Complaints</span>
+                  </a>
+              </li>
+              <li>
+                  <a href="#">
+                      <span class="icon"><i class="fas fa-user-friends"></i></span>
+                      <span class="item">Staff Request </span>
+                  </a>
+              </li>
+              <li>
+                  <a href="#">
+                      <span class="icon"><i class='fas fa-sign-out-alt' style='color: white'></i></span>
+                      <span class="item">Log Out</span>
+                  </a>
+              </li>
+              
+          </ul>
+      </div>
+      
+  </div>
+  </div>
+  <div>
+    <h1 class="logo" style="margin-right:-400px;"><img src="logo2.jpeg" width="200" height="100"> NurtureCare    <img style="margin-left:335px;" src="N-1.png" width="30" height="30"></h1>
+    <!-- <h1><img src="N-1.png" width="50" height="50"></h1> -->
+</div>
+  </header>
+</div>
+
+<!-- Search bar section -->
+<div class="search-container">
+  <input type="text" class="search-box" placeholder="Search...">
+  <button class="search-button">Search</button>
+</div>
+
+<div class="row">
+  <div class="column" style="background-color:white;">
+    <img src="adults.jpeg" style='width:100px; height:100px;'>
+    <h2>Adults</h2>
+    <p>Some text about adults category..</p>
+  </div>
+<div class="row">
+   <div class="column" style="background-color:white;">
+    <img src="elders.png" width="100" height="100">
+    <h2>Elders</h2>
+    <p>Some text about elders category..</p>
+  </div>
+<div class="row">
+    <div class="column" style="background-color:white;">
+        <img src="elders.png" width="100" height="100">
+        <h2>Elders</h2>
+        <p>Some text about elders category..</p>
+      </div>
+<div class="row">    
+      <div class="column" style="background-color:white;">
+        <img src="elders.png" width="100" height="100">
+        <h2>Elders</h2>
+        <p>Some text about elders category..</p>
+      </div>
+ <div class="row">    
+        <div class="column" style="background-color:white;">
+          <img src="elders.png" width="100" height="100">
+          <h2>Elders</h2>
+          <p>Some text about elders category..</p>
+        </div>
+ <div class="row">    
+            <div class="column" style="background-color:white;">
+              <img src="elders.png" width="100" height="100">
+              <h2>Elders</h2>
+              <p>Some text about elders category..</p>
+            </div>
+</div>
+<script>
+  var hamburger = document.querySelector(".hamburger");
+     hamburger.addEventListener("click", function(){
+         document.querySelector("body").classList.toggle("active");
+     })
+   </script>
+</body>
+</html>
